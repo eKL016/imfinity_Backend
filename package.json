@@ -1,0 +1,24 @@
+{
+  "name": "imfinity",
+  "version": "0.0.1",
+  "description": "Backends for NTUIM Camp.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodejs app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github:eKL016/imfinity_Backend.git"
+  },
+  "author": "Eze",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
+  }
+}
