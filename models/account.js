@@ -17,7 +17,6 @@ var Account = new Schema({
 	email: String,
 	emergencyContact:String,
 	emergencyTel:String,
-	emergnecyTel:String,
 	selfIntro: String,
 	mot: String,
 	demand: String,
