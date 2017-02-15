@@ -31,6 +31,3 @@ require('./routes')(App);
 App.listen(App.get('port'),function(){
 	console.log(("Express server listening on "+App.get('port')));
 });
-
-
-

@@ -1,9 +1,12 @@
 var passport = require('passport');
 var Account = require('./models/account');
- 
+
 module.exports = function(app){
-	app.post('/',function(req,res){
-		Account.register(new Account({username: req.body.username, grade: req.body.grade}),req.body.password,function(err,account){
+	app.post('/register',function(req,res){
+    var password = req.body.password;
+    delete req.body.password;
+    console.log(req.body);
+		Account.register(new Account(req.body),password,function(err,account){
 			if(err){
 				console.log(err);
 				res.send('FAILED!');
@@ -15,9 +18,9 @@ module.exports = function(app){
 		});
 	});
 
-	
+
 	app.get('/list',function(req,res){
-			
+
 	});
 
 };
