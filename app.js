@@ -9,12 +9,14 @@ var App = express();
 
 App.use(BodyParser.json());
 App.use(CookieParser());
-App.use(session({keys:['001','002']}));
+App.use(session({
+    keys: ['001', '002']
+}));
 App.use(Passport.initialize());
 App.use(Passport.session());
 App.use(express.static('public'));
-App.set('port',process.env.PORT||3000);
-App.set('view engine','ejs');
+App.set('port', process.env.PORT || 3000);
+App.set('view engine', 'ejs');
 //App.configure('development',function(){
 //	App.use(express.errorHandler({dumpExceptions: true, showStack: true}));
 //});
@@ -28,12 +30,11 @@ var Admin = require('./models/admin');
 Passport.use(new LocalStrategy(Admin.authenticate()));
 Passport.serializeUser(Admin.serializeUser());
 Passport.deserializeUser(Admin.deserializeUser());
-
-var Db = mongoose.connect('mongodb://localhost/imfinity');
+mongoose.connect('mongodb://localhost/imfinity');
 
 
 require('./routes')(App);
 
-App.listen(App.get('port'),function(){
-	console.log(("Express server listening on "+App.get('port')));
+App.listen(App.get('port'), function() {
+    console.log(("Express server listening on " + App.get('port')));
 });
