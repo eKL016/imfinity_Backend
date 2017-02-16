@@ -5,6 +5,13 @@ npm-debug.log*
 <<<<<<< HEAD
 yarn-debug.log*
 yarn-error.log*
+
+# Public directory
+public
+
+# View directory
+views
+
 =======
 >>>>>>> 30e3be0a346fcf6b7a1061e1b8599d9d41587541
 
