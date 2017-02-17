@@ -18,11 +18,11 @@ module.exports = function(app) {
             Account.register(new Account(req.body), password, function(err, account) {
                 if (err) {
                     console.log(new Date() + ' ' + err);
-                    return res.msg(err);
+                    return res.json({msg:err});
                 } else {
                     console.log('學員' + account.username + ' 已於 ' + new Date() + ' 報名');
                 }
-                return res.send('學員' + account.username + ' 已於 ' + new Date() + ' 報名');
+                return res.json({msg:"success"});
             });
         });
     app.route('/check')
