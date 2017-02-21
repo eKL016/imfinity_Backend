@@ -28,7 +28,6 @@ var Account = new Schema({
     mot: String, //動機
     demand: String, //期許
     contactUs: String, //想說的話
-    howToKnowUs: Array //如何得知本營隊
 });
 
 Account.plugin(passportMongoose, {

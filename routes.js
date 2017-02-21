@@ -26,10 +26,6 @@ module.exports = function(app) {
             });
         });
     app.route('/check')
-        .get(function(req, res) {
-            res.render('check');
-            _
-        })
         .post(function(req, res) {
             Account.findByUsername(req.body.email, function(err, account) {
                 if (!account) {
